@@ -3,20 +3,6 @@ const User = require('../models/userModel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// Register a new user
-// exports.registerUser = async (req, res) => {
-//   const { username, password, role } = req.body;
-//   if (!username || !password || !role) {
-//     return res.status(400).json({ message: 'Username, password, and role are required.' });
-//   }
-//   try {
-//     const user = new User({ username, password, role });
-//     await user.save();
-//     res.status(201).json({ message: 'User registered successfully' });
-//   } catch (error) {
-//     res.status(500).json({ message: 'Error registering user' });
-//   }
-// };
 exports.registerUser = async (req, res) => {
   const { username, password, role } = req.body;
   if (!username || !password || !role) {
@@ -25,7 +11,7 @@ exports.registerUser = async (req, res) => {
   try {
     const user = new User({ username, password, role });
     await user.save();
-    res.status(201).json(user);  // 返回整个用户对象
+    res.status(201).json(user); 
   } catch (error) {
     res.status(500).json({ message: 'Error registering user' });
   }

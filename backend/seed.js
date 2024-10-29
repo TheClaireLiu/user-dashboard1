@@ -8,27 +8,27 @@ const seedData = async () => {
     await mongoose.connect(process.env.MONGO_URI);
     console.log('Connected to MongoDB');
 
-    await User.deleteMany(); // 清空用户集合
+    await User.deleteMany(); 
 
     const users = [
       {
         username: 'adminUser',
-        password: await bcrypt.hash('admin123', 10), // 加密密码
+        password: await bcrypt.hash('admin123', 10), 
         role: 'admin',
       },
       {
         username: 'regularUser1',
-        password: await bcrypt.hash('user123', 10), // 加密密码
+        password: await bcrypt.hash('user123', 10), 
         role: 'regular',
       },
       {
         username: 'regularUser2',
-        password: await bcrypt.hash('user123', 10), // 加密密码
+        password: await bcrypt.hash('user123', 10), 
         role: 'regular',
       },
     ];
 
-    await User.insertMany(users); // 批量插入用户
+    await User.insertMany(users); 
     console.log('Default users added successfully');
     process.exit();
   } catch (error) {
