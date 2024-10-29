@@ -21,6 +21,15 @@ This is a simple user management dashboard that allows users to log in and manag
 - **Authentication**: JWT for token-based authentication.
 
 ## Setup and Installation
+### Quick Setup
+
+To quickly set up both backend and frontend environments, you can run the following script:
+
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
 
 ### Prerequisites
 
@@ -33,7 +42,7 @@ This is a simple user management dashboard that allows users to log in and manag
 
    ```bash
    git clone https://github.com/TheClaireLiu/user-dashboard1.git
-   cd user-management-dashboard
+   cd user-dashboard
    ```
 
 2. **Install dependencies for frontend and backend**:
@@ -58,32 +67,32 @@ This is a simple user management dashboard that allows users to log in and manag
 
 4. **Running the Application**:
 
-   - **Backend**:
+    - **Backend**:
 
-     ```bash
-     cd backend
-     npm start
-     ```
+      ```bash
+      cd backend
+      npm start
+      ```
 
-     The backend server will start at `http://localhost:5000`.
+      The backend server will start at `http://localhost:5000`.
 
-   - **Frontend**:
+    - **Frontend**:
 
-     ```bash
-     cd ../frontend
-     npm start
-     ```
+      ```bash
+      cd ../frontend
+      npm start
+      ```
 
-     The frontend application will start at `http://localhost:3000`.
+      The frontend application will start at `http://localhost:3000`.
 
 5. **Running Tests**:
 
-   - **Backend Unit Tests**:
+    - **Backend Unit Tests**:
 
-     ```bash
-     cd backend
-     npm test
-     ```
+      ```bash
+      cd backend
+      npm test
+      ```
 
 ## Design Choices
 
@@ -119,6 +128,3 @@ After generating code using ChatGPT, I made several modifications, including:
 
 The AI-generated content served as a foundation, and I refined and adapted it to meet the project requirements.
 
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
