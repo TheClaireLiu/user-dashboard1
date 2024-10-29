@@ -57,15 +57,7 @@ chmod +x setup.sh
    npm install
    ```
 
-3. **Create a `.env` file in the `backend` directory**:
-
-   ```env
-   MONGO_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
-   PORT=5000
-   ```
-
-4. **Running the Application**:
+3. **Running the Application**:
 
     - **Backend**:
 
@@ -85,7 +77,7 @@ chmod +x setup.sh
 
       The frontend application will start at `http://localhost:3000`.
 
-5. **Running Tests**:
+4. **Running Tests**:
 
     - **Backend Unit Tests**:
 
