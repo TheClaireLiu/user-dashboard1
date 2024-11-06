@@ -1,19 +1,12 @@
 // frontend/src/components/Dashboard.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 const Dashboard = ({ role, token }) => {
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({ username: '', password: '', role: 'regular' });
 
-  useEffect(() => {
-    if (role === 'admin') {
-      console.log("Admin role detected, loading users...");
-      loadUsers();
-    }
-  }, [role]);
-
-  const loadUsers = async () => {
+  const loadUsers = useCallback(async () => {
     try {
       const response = await axios.get('http://localhost:5000/api/users', {
         headers: {
@@ -25,7 +18,14 @@ const Dashboard = ({ role, token }) => {
     } catch (error) {
       console.error('Error fetching users:', error);
     }
-  };
+  }, [token]);
+
+  useEffect(() => {
+    if (role === 'admin') {
+      console.log("Admin role detected, loading users...");
+      loadUsers();
+    }
+  }, [role, loadUsers]);
 
   const handleAddUser = async () => {
     if (!newUser.username || !newUser.password || !newUser.role) {

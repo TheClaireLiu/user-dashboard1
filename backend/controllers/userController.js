@@ -17,6 +17,7 @@ exports.registerUser = async (req, res) => {
   }
 };
 
+
 // Login user
 exports.loginUser = async (req, res) => {
   const { username, password } = req.body;
@@ -28,7 +29,7 @@ exports.loginUser = async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });
     }
-
+    // console.log(password)
     const isMatch = await bcrypt.compare(password, user.password); // 验证密码
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid credentials.' });
